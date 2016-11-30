@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Foody.iml" filepath="$PROJECT_DIR$/Foody.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudinarysync/cloudinarysync.iml" filepath="$PROJECT_DIR$/cloudinarysync/cloudinarysync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/datastorage/datastorage.iml" filepath="$PROJECT_DIR$/datastorage/datastorage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/firebase/firebase.iml" filepath="$PROJECT_DIR$/firebase/firebase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logger/logger.iml" filepath="$PROJECT_DIR$/logger/logger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/media/media.iml" filepath="$PROJECT_DIR$/media/media.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menu/menu.iml" filepath="$PROJECT_DIR$/menu/menu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notification/notification.iml" filepath="$PROJECT_DIR$/notification/notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oneui/oneui.iml" filepath="$PROJECT_DIR$/oneui/oneui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/superuser/superuser.iml" filepath="$PROJECT_DIR$/superuser/superuser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/supervisor/supervisor.iml" filepath="$PROJECT_DIR$/supervisor/supervisor.iml" />
+    </modules>
+  </component>
+</project>
