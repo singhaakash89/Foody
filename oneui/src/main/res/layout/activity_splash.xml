@@ -3,22 +3,25 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context="com.food_app.component.oneui.SplashActivity">
+    tools:context="com.app.foody.oneui.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:adjustViewBounds="true"
-        android:background="@drawable/ic_splash" />
+        android:src="@drawable/img_splash_2"
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/devInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="540dp"
-        android:gravity="center"
         android:text="@string/Developer"
+        android:layout_marginLeft="10dp"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:fontFamily="@string/font_family_thin"/>
 </RelativeLayout>

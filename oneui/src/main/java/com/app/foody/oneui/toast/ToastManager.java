@@ -73,7 +73,7 @@ public class ToastManager extends Toast {
         // Set The layout as Toast View
         toast.setView(layout);
         // Position you toast here toast position is 50 dp from bottom you can give any integral value
-        toast.setGravity(Gravity.BOTTOM, 0, 200);
+        toast.setGravity(Gravity.BOTTOM, 0, 100);
         toast.setDuration(LENGTH_SHORT);
         toast.show();
     }
@@ -102,7 +102,7 @@ public class ToastManager extends Toast {
         // Set The layout as Toast View
         toast.setView(layout);
         // Position you toast here toast position is 50 dp from bottom you can give any integral value
-        toast.setGravity(Gravity.BOTTOM, 0, 200);
+        toast.setGravity(Gravity.BOTTOM, 0, 100);
         toast.setDuration(LENGTH_SHORT);
         toast.show();
     }

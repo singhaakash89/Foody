@@ -40,18 +40,18 @@
     <string name="item_image">Select Image</string>
     <string name="item_id_tv">Item Id</string>
     <string name="item_name_tv">Item Name</string>
-    <string name="item_type_tv">Item Type (Veg/Non-veg)</string>
-    <string name="item_cuisine_tv">Item Cuisine</string>
+    <string name="item_type_tv">ITEM TYPE</string>
+    <string name="item_cuisine_tv">ITEM CUISINE</string>
     <string name="item_price_tv">Item Price</string>
-    <string name="item_rating_tv">Item Rating</string>
-    <string name="item_avaiability_tv">Item Availability</string>
+    <string name="item_rating_tv">ITEM RATING</string>
+    <string name="item_avaiability_tv">ITEM AVAILABILITY</string>
 
     <!--Admin edittext : upload item -->
-    <string name="item_id_et">Item Id</string>
-    <string name="item_name_et">Item Name</string>
+    <string name="item_id_et">ITEM ID</string>
+    <string name="item_name_et">ITEM NAME</string>
     <string name="item_type_et">Item Type(Veg/Non-veg)</string>
     <string name="item_cuisine_et">Item Cuisine</string>
-    <string name="item_price_et">Item Price</string>
+    <string name="item_price_et">ITEM PRICE</string>
     <string name="item_rating_et">Item Rating</string>
     <string name="item_avaiability_et">Item Availability</string>
 
@@ -60,13 +60,13 @@
 
     <!--Spinner : Data-->
     <string-array name="item_type_spinner_entries">
-        <item>Item Type(Veg/Non-veg)</item>
+        <item>Please select</item>
         <item>Vegetarian</item>
         <item>Non-vegetarian</item>
     </string-array>
 
     <string-array name="item_cuisine_spinner_entries">
-        <item>Item Cuisine</item>
+        <item>Please select</item>
         <item>Indian</item>
         <item>Indian-Punjabi</item>
         <item>Indian-Bengoli</item>
@@ -78,7 +78,7 @@
     </string-array>
 
     <string-array name="item_rating_spinner_entries">
-        <item>Item Rating</item>
+        <item>Please select</item>
         <item>1.0 Star</item>
         <item>2.0 Star</item>
         <item>3.0 Star</item>
@@ -98,5 +98,5 @@
     <string name="drawer_close">Drawer Closed</string>
 
     <!--Splash screen Data-->
-    <string name="Developer"> Developed by <b>Team Foody</b></string>
+    <string name="Developer"> Developed by <b>: Team Foody</b></string>
 </resources>

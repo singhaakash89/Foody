@@ -1,12 +1,11 @@
 package com.app.foody.oneui.activities.admin;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -50,7 +49,10 @@ public class AdminBaseActivity extends AppCompatActivity implements AdminContrac
     private List<String> arrayList;
     private SpinnerModel spinnerModel;
     private Intent intent;
+    private final int SELECT_PHOTO = 100;
+    private ProgressDialog progressDialog;
 
+    private TextView item_Image_tv;
     private TextView item_id_tv;
     private TextView item_name_tv;
     private TextView item_type_tv;
@@ -59,6 +61,7 @@ public class AdminBaseActivity extends AppCompatActivity implements AdminContrac
     private TextView item_cuisine_tv;
     private TextView item_avaiability_tv;
 
+    private ImageView item_ImgView;
     private EditText item_id_et;
     private EditText item_name_et;
     private Spinner item_type_spinner;
@@ -67,16 +70,14 @@ public class AdminBaseActivity extends AppCompatActivity implements AdminContrac
     private Spinner item_cuisine_spinner;
     private Spinner item_avaiability_spinner;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         standardAdminPresenter = new StandardAdminPresenter(this);
         standardSpinnerAdapter = new StandardSpinnerAdapter(this);
         toastManager = ToastManager.getInstance();
-        if (getIntent().getStringExtra(AdminContract.KEY).equals(AdminContract.UPLOAD_ITEM)) {
-            uploadItem(R.layout.layout_admin_upload_item);
-        }
+        progressDialog = new ProgressDialog(this);
+        inflateView(getIntent().getStringExtra(AdminContract.KEY));
     }
 
     @Override
@@ -99,6 +100,16 @@ public class AdminBaseActivity extends AppCompatActivity implements AdminContrac
     public void onBackPressed() {
         super.onBackPressed();
         AdminBaseActivity.this.finish();
+    }
+
+    private void inflateView(String intentValue) {
+        if (intentValue.equals(AdminContract.UPLOAD_ITEM)) {
+            uploadItem(R.layout.layout_admin_upload_item);
+        } else if (true) {
+            //edit item
+            //order
+            //finance
+        }
     }
 
     public static StandardAdminPresenter getPresenterInstance() {
@@ -141,41 +152,54 @@ public class AdminBaseActivity extends AppCompatActivity implements AdminContrac
         setContentView(resId);
         fragmentNameForAppBar.setText(getResources().getString(R.string.upload_item));
         //refering all textviews
-        item_id_tv = (TextView) findViewById(R.id.item_id_tv);
-        item_name_tv = (TextView) findViewById(R.id.item_name_tv);
-        item_type_tv = (TextView) findViewById(R.id.item_type_tv);
-        item_rating_tv = (TextView) findViewById(R.id.item_rating_tv);
-        item_price_tv = (TextView) findViewById(R.id.item_price_tv);
-        item_cuisine_tv = (TextView) findViewById(R.id.item_cuisine_tv);
-        item_avaiability_tv = (TextView) findViewById(R.id.item_avaiability_tv);
-
-        //refering all edittext
-        item_id_et = (EditText) findViewById(R.id.item_id_et);
-        item_name_et = (EditText) findViewById(R.id.item_name_et);
-        item_type_spinner = (Spinner) findViewById(R.id.item_type_spinner);
-        item_rating_spinner = (Spinner) findViewById(R.id.item_rating_spinner);
-        item_price_et = (EditText) findViewById(R.id.item_price_et);
-        item_cuisine_spinner = (Spinner) findViewById(R.id.item_cuisine_spinner);
-        item_avaiability_spinner = (Spinner) findViewById(R.id.item_avaiability_spinner);
-
-        item_id_et.setOnFocusChangeListener(this);
-        item_name_et.setOnFocusChangeListener(this);
-        item_type_spinner.setOnItemSelectedListener(this);
-        item_rating_spinner.setOnItemSelectedListener(this);
-        item_price_et.setOnFocusChangeListener(this);
-        item_cuisine_spinner.setOnItemSelectedListener(this);
-        item_avaiability_spinner.setOnItemSelectedListener(this);
-
-        //Clearing Edit Text Focus when activity starts
-        item_id_et.clearFocus();
-        item_name_et.clearFocus();
-        item_price_et.clearFocus();
-
-        spinnerModel = new SpinnerModel();
-        for (int i = 0; i < spinnerModel.getId().length; i++) {
-            arrayList = Arrays.asList(getResources().getStringArray(spinnerModel.getId(i)));
-            standardSpinnerAdapter.setAdapter(spinnerModel.getSpinner(i), arrayList);
-        }
+//        item_ImgView = (ImageView) findViewById(R.id.item_ImgView);
+//        item_Image_tv = (TextView) findViewById(R.id.item_Image_tv);
+//        item_id_tv = (TextView) findViewById(R.id.item_id_tv);
+//        item_name_tv = (TextView) findViewById(R.id.item_name_tv);
+//        item_type_tv = (TextView) findViewById(R.id.item_type_tv);
+//        item_rating_tv = (TextView) findViewById(R.id.item_rating_tv);
+//        item_price_tv = (TextView) findViewById(R.id.item_price_tv);
+//        item_cuisine_tv = (TextView) findViewById(R.id.item_cuisine_tv);
+//        item_avaiability_tv = (TextView) findViewById(R.id.item_avaiability_tv);
+//
+//        //refering all edittext
+//        item_id_et = (EditText) findViewById(R.id.item_id_et);
+//        item_name_et = (EditText) findViewById(R.id.item_name_et);
+//        item_type_spinner = (Spinner) findViewById(R.id.item_type_spinner);
+//        item_rating_spinner = (Spinner) findViewById(R.id.item_rating_spinner);
+//        item_price_et = (EditText) findViewById(R.id.item_price_et);
+//        item_cuisine_spinner = (Spinner) findViewById(R.id.item_cuisine_spinner);
+//        item_avaiability_spinner = (Spinner) findViewById(R.id.item_avaiability_spinner);
+//
+//        item_ImgView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//                // 2. pick image only
+//                intent.setType("image/*");
+//                // 3. start activity
+//                startActivityForResult(intent, SELECT_PHOTO);
+//            }
+//        });
+//
+//        item_id_et.setOnFocusChangeListener(this);
+//        item_name_et.setOnFocusChangeListener(this);
+//        item_type_spinner.setOnItemSelectedListener(this);
+//        item_rating_spinner.setOnItemSelectedListener(this);
+//        item_price_et.setOnFocusChangeListener(this);
+//        item_cuisine_spinner.setOnItemSelectedListener(this);
+//        item_avaiability_spinner.setOnItemSelectedListener(this);
+//
+//        //Clearing Edit Text Focus when activity starts
+//        item_id_et.clearFocus();
+//        item_name_et.clearFocus();
+//        item_price_et.clearFocus();
+//
+//        spinnerModel = new SpinnerModel();
+//        for (int i = 0; i < spinnerModel.getId().length; i++) {
+//            arrayList = Arrays.asList(getResources().getStringArray(spinnerModel.getId(i)));
+//            standardSpinnerAdapter.setAdapter(spinnerModel.getSpinner(i), arrayList);
+//        }
         return true;
     }
 

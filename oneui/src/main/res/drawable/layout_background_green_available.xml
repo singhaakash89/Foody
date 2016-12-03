@@ -7,7 +7,7 @@
         android:width="0.1dip"
         android:color="@color/transparent" />
 
-    <corners android:radius="0dip" />
+    <corners android:radius="5dip" />
 
     <padding
         android:bottom="5dip"
